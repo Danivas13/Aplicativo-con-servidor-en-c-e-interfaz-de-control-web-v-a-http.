@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			font-family: 'Arial';
+		}
+		.total{
+		}
+		.menu{
+			width: 10%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background: #00BFFF;
+		}
+		.cuerpo{
+			width: 80%;
+			position: absolute;
+			top: 0;
+			left: 10%;
+		}
+		.areabotones{
+			position: absolute;
+			top: 30%;
+			width: 100%;
+		}
+		.boton{
+			width: 96%;
+			height: 50px;
+			color: #fff;
+			border:solid 1px rgba(255,255,255,0.3);
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 5px;
+			text-align: center;
+			cursor: pointer;
+			line-height: 50px;
+			font-size: 20px;
+		}
+		.boton:hover{
+			background: rgba(255,255,255,0.1);
+		}
+		.firtstitulo{
+			color: #BDBDBD;
+			margin-top: 5%;
+			margin-left: 5%;
+		}
+		.subitulo{
+			color: #BDBDBD;
+			margin-left: 5%;
+		}
+		.canciones{
+			margin-left: 5%;
+			background: #F2F2F2;
+			float: left;
+			width: 95%;
+		}
+		.espacio{
+			width: 100%;
+			float: left;
+			height: 50px;
+		}
+		.cancion{
+			width: 90%;
+			height: 80px;
+			border: solid 1px lightgray;
+			float: left;
+			background: #fff;
+			margin: 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+		.portada{
+			
+		}
+		.portada > h3{
+			font-size: 15px;
+			padding-left: 8px;
+			padding-right: 8px;
+			float: left;
+			height: 100%;
+			line-height: 50px;
+			overflow: hidden;
+text-overflow: ellipsis;
+max-width: 70%;
+white-space: nowrap;
+		}
+		.portada > h5{
+			position: absolute;
+			font-size: 15px;
+			padding-left: 8px;
+			padding-right: 8px;
+			float: right;
+			margin-right: 100px;
+			
+			line-height: 31px;
+			right: 0;
+		}
+		.portada > h7{
+			font-size: 15px;
+			padding-left: 8px;
+			padding-right: 8px;
+			height: 100%;
+			line-height: 80px;
+			max-width: 15%;
+float: right;
+		}
+		.dcancion{
+			width: 200px;
+			height: 200px;
+			border: solid 1px lightgray;
+			border-radius: 200px;
+			float: left;
+			background: #fff;
+			margin: 20px;
+			text-align: center;
+			cursor: pointer;
+			display: table; border-color: rgb(255, 174, 0);
+			  
+			/*/   /*/
+		}
+		.some{
+			position: absolute;
+			
+			width: 200px;
+			height: 200px;
+			 -webkit-animation: spin 2s linear infinite;
+		    animation: spin 2s linear infinite;
+			 border-radius: 50%;
+		}
+		.some:before {
+	    content: "";
+	    position: absolute;
+	    top: 5px;
+	    left: 5px;
+	    right: 5px;
+	    bottom: 5px;
+	    border: 3px solid #e74c3c;
+	    border: 3px solid transparent;
+	    border-top-color: #e74c3c;
+	    border-radius: 50%;
+	    -webkit-animation: spin 3s linear infinite;
+    	animation: spin 3s linear infinite;
+	}
+	.some:after {
+	    content: "";
+	    position: absolute;
+	    top: 15px;
+	    left: 15px;
+	    right: 15px;
+	    bottom: 15px;    
+	    border-radius: 50%;
+	}
+		.dportada{
+			max-width: 180px;
+			display: table-cell;
+			vertical-align: middle;
+			padding-left: 5%;
+			padding-right: 5%;
+			/*/-webkit-animation: spinrever 2s linear infinite;
+    		animation: spinrever 2s linear infinite;/*/
+		}
+		.dportada > h5{
+			font-size: 12px;
+			padding-left: 8px;
+			padding-right: 8px;
+			font-weight: normal;
+			width: 80%;
+			padding-left: 10%;
+			padding-right: 10%;
+			text-align: center;
+			overflow-wrap: break-word;
+		}
+		.dportada > h3{
+			font-size: 15px;
+			padding-left: 8px;
+			padding-right: 8px;
+			font-weight: normal;
+			width: 80%;
+			padding-left: 10%;
+			padding-right: -10%;
+			text-align: center;
+		}
+    
+		/* copy and paste the animation inside all 3 elements -webkit-transform-origin: 50% 50%; */
+/* #loader, #loader:before, #loader:after */
+-webkit-animation: spin 1.5s linear infinite;
+animation: spin 1.5s linear infinite;
+ 
+/* include this only once */
+@-webkit-keyframes spin {
+    0%   {
+    	
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+    	
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+    	
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+    	
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+-webkit-animation: spinrever 1.5s linear infinite;
+animation: spinrever 1.5s linear infinite;
+@-webkit-keyframes spinrever {
+    0%   {
+
+    	-webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spinrever {
+    0%   {
+
+       	-webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+	</style>
+</head>
+<body>
+<div class="total">
+	<div class="menu">
+		<div class="areabotones">
+
+		</div>
+	</div>
+	<div class="cuerpo">
+		<h1  id="codez" class="firtstitulo">Tu Biblioteca</h1>
+		<h4 id="descnser" class="subitulo">Descarga de canciones</h4>
+		<div class="canciones" id="myprocess">
+			<!-- <div class="cancion" onclick="descargar('songprueba','https://www.youtube.com/watch?v=aoR0mGq_z2I');" id="songprueba">
+				<div class="portada">
+					<h3>I will follow you into the dark</h3>
+					<h5>Los de adentro</h5>
+					<h7>3:00</h7>
+				</div>
+			</div>
+			<div class="cancion" onclick="descargar('songprueba2','https://www.youtube.com/watch?v=6JARVfb-FBg');" id="songprueba2">
+				<div class="portada">
+					<h3>Una cancion</h3>
+					<h5>Los de adentro</h5>
+					<h7>3:00</h7>
+				</div>
+			</div>
+			<div class="cancion">
+				<div class="portada">
+					<h3>Dime</h3>
+					<h5>Los de adentro</h5>
+					<h7>3:00</h7>
+				</div>
+			</div> 
+			<div class="dcancion" style="">
+			<div class="some" ><style>.dcancion:before{border-top-color: #ffae00;}</style></div>
+			<div class="dportada"><h3></h3><h5>https://www.youtube.com/watch?v=MjXzA4EtjoI</h5><h7>Buscando</h7></div>
+			</div>-->
+		</div>
+		<div class="espacio"></div>
+		<h4 class="subitulo">Canciones en tus dispositivos</h4>
+		<div class="canciones" id="mybiblio">
+			
+		<!--	<div class="cancion">
+				<div class="portada">
+					<h3>Dime</h3>
+					<h5>Los de adentro</h5>
+					<h7>3:00</h7>
+				</div>
+			</div> -->
+	
+		</div>
+	</div>
+	<div style="display: none" id="tmpdiv"></div>
+</div>
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script  type="text/javascript" src="js/jquery.form.js"></script>
+<script type="text/javascript">
+var permcon = "";
+ocle = false;
+
+	function descargar(id,enlace){
+		var urly = enlace;
+		var tipa = "uno";
+		var id   = id;
+		//enviar post para descargar
+
+                /*/var temporal = '<form id="bupform" method="post" enctype="multipart/form-data" action="index.html" ><input type="text" name="@[vid" value="'+id+']" /><input type="text" name="[tipo" value="'+tipa+']" /><input type="text" name="[codigo" value="'+urly+']@" /><input id="btnsendocl" type="submit" /></form>';
+        		$("#tmpdiv").html(temporal);
+        		$("#btnsendocl").click();/*/
+        		$.get( "solicitar=@[vid="+id+"]&[tipo="+tipa+"]&[codigo="+urly+"]@", function( data ) { });
+	}
+	   
+	window.onload = function(){
+		makeid();
+		soliconect();		
+		solicitarlista();
+		solicitardescargas();
+	};
+	 window.onunload = window.onbeforeunload = function (e) {
+
+           e = e || window.event;
+
+           if (e) {
+
+              desconectar();
+
+           }
+
+       }
+
+
+	function estilos(id,color){
+			var comp = id;
+			
+			if (typeof id !== 'undefined') {
+			var codigo = "" + $("#"+id + "> .some").html();			
+				
+					var a = codigo.split("<style>");
+					
+					if(a.length > 1){
+						var b = a[1].split("</style>")[0].split("border-top-color: ")[1].split(";}")[0];
+						if(b != color){
+							$("#"+id+ "> .some").html($("#"+id + "> .some").html() + '<style>#'+id+' > .some:before{border-top-color: '+color+';}</style>');
+						}
+					}else{
+						$("#"+id + "> .some").html($("#"+id+ "> .some").html() + '<style>#'+id+' > .some:before{border-top-color: '+color+';}</style>');
+					}			
+			}
+	}
+	function updateclient(){
+
+		$.get( "comunicador.txt", function( data ) {
+			//alert(data);
+			var cancelconect = data.split("%")[1].split("%")[0];
+			if(cancelconect == permcon){
+
+
+			var proces= data.split("@")[1].split("@")[0];
+			if(proces != ""){
+			var datapro = proces;
+			var allsolicitudes = datapro.split("&");
+			
+			for(var x =  allsolicitudes.length-1; x >= 0; x--){
+					var raiz = allsolicitudes[x].split("[{");
+					var antr = raiz[1].split("}]")[0];
+					var idu = raiz[2].split("}]")[0];
+					var text = raiz[3].split("}]")[0];
+					if((antr != "") && (idu != "") && (text != "")){
+						if (text == "B")
+		                {
+		                    $("#"+idu).css("border-color", "#ffae00");
+		                    estilos(""+idu,"#ffae00");
+		                    $("#"+idu + "> .dportada > h7").html("Buscando");
+		                    
+		                }
+		                else if (text == "D")
+		                {
+		                    $("#"+idu).css("border-color", "#00b2ff");
+		                    estilos(idu,"#00b2ff");
+		                    $("#"+idu + "> .dportada > h7").html("Descargando");
+		                    var titulosong = raiz[4].split("}]")[0];
+		                    $("#"+idu + "> .dportada > h3").html(titulosong);
+		                }
+		                else if (text == "C")
+		                {
+		                	estilos(idu,"#faff00");
+		                    $("#"+idu).css("border-color", "#faff00");
+		                    $("#"+idu + "> .dportada > h7").html("Convirtiendo");
+		                   
+		                }
+		                else if (text == "E")
+		                {
+		                	estilos(idu,"#6100ff");
+		                   $("#"+idu).css("border-color", "#6100ff");
+		                   $("#"+idu + "> .dportada > h7").html("Enviando");
+		                   var titulosong = raiz[4].split("}]")[0];
+		                   $("#"+idu + "> .dportada > h3").html(titulosong);
+		                }
+		                else if (text == "R")
+		                {
+		                	estilos(idu,"#03d100");
+		                    $("#"+idu).css("border-color", "#03d100");
+		                    $("#"+idu + "> .dportada > h7").html("Terminado");
+		                    var titulosong = raiz[4].split("}]")[0];
+		                    $("#"+idu + "> .dportada > h3").html(titulosong);
+		                }
+		                else if (text == "W")
+		                {
+		                	estilos(idu,"#8d918c");
+		                    $("#"+idu).css("border-color", "#8d918c");
+		                    $("#"+idu + "> .dportada > h7").html("Esperando");
+		                }
+		                else if (text == "X")
+		                {
+		                	estilos(idu,"#ff0000");
+		                    $("#"+idu).css("border-color", "#ff0000");
+		                    $("#"+idu + "> .dportada > h7").html("Error");
+		                    var titulosong = raiz[4].split("}]")[0];
+		                    $("#"+idu + "> .dportada > h3").html(titulosong);
+		                }
+		                else if (text == "DELETE")
+		                {
+		                    $("#"+idu).remove();
+		                    
+		                }
+		                else if (text == "MAKE")
+		                {
+		                	var deco = idu.split("/yol/");
+		                    $("#mybiblio").html($("#mybiblio").html() + '<div class="cancion" id="'+deco[0] +'"><div class="portada"><h3>'+deco[1]+'</h3><h5>Los de adentro</h5><h7>3:00</h7></div></div>');
+		                    		                }
+		                else if (text == "EDIT")
+		                {
+		                	var deco = idu.split("/yol/");
+		                    $("#"+deco[0]+ "> .portada > h3").html(deco[1]);
+		                    
+		                }else if(text == "DESCONECT"){
+		                	
+		                	if(permcon == idu){
+		                		window.location = 'about:blank';
+		                	}
+		                }else if(text == "UPDATE"){
+		                	solicitardescargas();
+		                }
+		            }	
+		        }
+		        
+				}
+				}else{
+					window.location = 'desconectado.html';
+				}	  
+			});
+	}
+	function solicitarlista(){
+		$.get( "lista", function( data ) {
+			var content = data.split("@")[1].split("@")[0];
+			if(content !== ""){
+				var canciones = content.split("/yol/");
+				for(var z = 0; z <= canciones.length-1; z++){
+					var composision = canciones[z].split("/nay/");
+					$("#mybiblio").html($("#mybiblio").html() + '<div class="cancion" id="'+composision[1] +'"><div class="portada"><h3>'+composision[0]+'</h3><h5>Solo en pc</h5></div></div>');
+				}
+			}		
+		});
+	}
+	function solicitardescargas(){
+		$.get( "procesos", function( data ) {
+			//$("#mybiblio")
+			var content = data.split("@")[1].split("@")[0];
+			if(content !== ""){
+				var canciones = content.split("/yol/");
+				$("#myprocess").html("");
+				for(var z = 0; z <= canciones.length-2; z++){
+					var composision = canciones[z].split("/nay/");
+					var hereid = composision[0];
+					var hereenlace = composision[1];
+					var herenombre = composision[2];
+					var hereestado = composision[3];
+
+					$("#myprocess").html($("#myprocess").html() + '<div class="dcancion" id="'+hereid +'"><div class="some"></div><div class="dportada"><h3>'+herenombre+'</h3><h5>'+hereenlace+'</h5><h7></h7></div></div>');
+					
+					if (hereestado == "B")
+		                {
+		                    $("#"+hereid).css("border-color", "#ffae00");
+		                    $("#"+hereid + "> .dportada > h7").html("Buscando");
+		                    estilos(""+hereid,"#ffae00");
+		                }
+		                else if (hereestado == "D")
+		                {
+		                    $("#"+hereid).css("border-color", "#00b2ff");
+		                    $("#"+hereid + "> .dportada > h7").html("Descargando");
+		                    estilos(""+hereid,"#00b2ff");
+		                }
+		                else if (hereestado == "C")
+		                {
+		                    $("#"+hereid).css("border-color", "#faff00");
+		                    $("#"+hereid + "> .dportada > h7").html("Convirtiendo");
+		                    estilos(""+hereid,"#faff00");
+		                }
+		                else if (hereestado == "E")
+		                {
+		                   $("#"+hereid).css("border-color", "#6100ff");
+		                   $("#"+hereid + "> .dportada > h7").html("Enviando");
+		                   estilos(""+hereid,"#6100ff");
+		                }
+		                else if (hereestado == "R")
+		                {
+		                    $("#"+hereid).css("border-color", "#03d100");
+		                    $("#"+hereid + "> .dportada > h7").html("Terminado");
+		                    estilos(""+hereid,"#03d100");
+		                }
+		                else if (hereestado == "W")
+		                {
+		                    $("#"+hereid).css("border-color", "#8d918c");
+		                    $("#"+hereid + "> .dportada > h7").html("Esperando");
+		                    estilos(""+hereid,"#8d918c");
+		                }
+		                else if (hereestado == "X")
+		                {
+		                    $("#"+hereid).css("border-color", "#ff0000");
+		                    $("#"+hereid + "> .dportada > h7").html("Error");
+		                    estilos(""+hereid,"#ff0000");
+		                }
+				
+
+
+				}
+
+			}
+			
+		});
+	}
+	function soliconect(){
+		$.get( "conectar-"+permcon, function(data){
+			updateclient();
+			setInterval(function(){ updateclient(); }, 3000);
+		});
+	}
+	function desconectar(){
+		alert("bye");
+	}
+	function makeid()
+	{
+	    var text = "";
+	    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+	    for( var i=0; i < 5; i++ )
+	        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+	    if(ocle == false){
+	    permcon =  text;
+	    ocle = true;
+
+		}
+	}
+</script>
+</body>
+</html>
